@@ -8,9 +8,7 @@
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
-  final String title;
-
-  HomePage({Key key, @required this.title}) : assert(title != null);
+  HomePage({Key key});
 
   @override
   Widget build(BuildContext context) {

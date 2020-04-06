@@ -18,9 +18,9 @@ void main() {
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
-          home: HomePage(title: 'T')));
+          home: HomePage()));
       final titleFinder = find.text('T');
-      expect(titleFinder, findsOneWidget);
+      expect(titleFinder, findsNothing);
     });
   });
 }
