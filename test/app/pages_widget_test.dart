@@ -6,6 +6,7 @@
  *
  */
 
+
 import 'package:caminhos_do_saber/app/pages/pages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -18,7 +19,6 @@ void main() {
             primarySwatch: Colors.blue,
           ),
           home: HomePage(title: 'T')));
-
       final titleFinder = find.text('T');
       expect(titleFinder, findsOneWidget);
     });
