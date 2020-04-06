@@ -6,5 +6,3 @@
  *
  */
 
-export 'package:caminhos_do_saber/app/pages/accountsettings/widgets/widgets.dart';
-export 'Buttons.dart';

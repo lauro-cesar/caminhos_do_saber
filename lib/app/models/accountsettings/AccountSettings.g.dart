@@ -20,23 +20,40 @@ class _$AccountSettingsSerializer
   Iterable<Object> serialize(Serializers serializers, AccountSettings object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[
-      'firstName',
-      serializers.serialize(object.firstName,
-          specifiedType: const FullType(String)),
-      'middleName',
-      serializers.serialize(object.middleName,
-          specifiedType: const FullType(String)),
-      'lastName',
-      serializers.serialize(object.lastName,
-          specifiedType: const FullType(String)),
-      'accessToken',
-      serializers.serialize(object.accessToken,
-          specifiedType: const FullType(String)),
       'userName',
       serializers.serialize(object.userName,
           specifiedType: const FullType(String)),
     ];
-
+    if (object.id != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(object.id,
+            specifiedType: const FullType(int)));
+    }
+    if (object.firstName != null) {
+      result
+        ..add('firstName')
+        ..add(serializers.serialize(object.firstName,
+            specifiedType: const FullType(String)));
+    }
+    if (object.middleName != null) {
+      result
+        ..add('middleName')
+        ..add(serializers.serialize(object.middleName,
+            specifiedType: const FullType(String)));
+    }
+    if (object.lastName != null) {
+      result
+        ..add('lastName')
+        ..add(serializers.serialize(object.lastName,
+            specifiedType: const FullType(String)));
+    }
+    if (object.accessToken != null) {
+      result
+        ..add('accessToken')
+        ..add(serializers.serialize(object.accessToken,
+            specifiedType: const FullType(String)));
+    }
     return result;
   }
 
@@ -52,6 +69,10 @@ class _$AccountSettingsSerializer
       iterator.moveNext();
       final dynamic value = iterator.current;
       switch (key) {
+        case 'id':
+          result.id = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
+          break;
         case 'firstName':
           result.firstName = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
@@ -81,6 +102,8 @@ class _$AccountSettingsSerializer
 
 class _$AccountSettings extends AccountSettings {
   @override
+  final int id;
+  @override
   final String firstName;
   @override
   final String middleName;
@@ -95,24 +118,13 @@ class _$AccountSettings extends AccountSettings {
       (new AccountSettingsBuilder()..update(updates)).build();
 
   _$AccountSettings._(
-      {this.firstName,
+      {this.id,
+      this.firstName,
       this.middleName,
       this.lastName,
       this.accessToken,
       this.userName})
       : super._() {
-    if (firstName == null) {
-      throw new BuiltValueNullFieldError('AccountSettings', 'firstName');
-    }
-    if (middleName == null) {
-      throw new BuiltValueNullFieldError('AccountSettings', 'middleName');
-    }
-    if (lastName == null) {
-      throw new BuiltValueNullFieldError('AccountSettings', 'lastName');
-    }
-    if (accessToken == null) {
-      throw new BuiltValueNullFieldError('AccountSettings', 'accessToken');
-    }
     if (userName == null) {
       throw new BuiltValueNullFieldError('AccountSettings', 'userName');
     }
@@ -130,6 +142,7 @@ class _$AccountSettings extends AccountSettings {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is AccountSettings &&
+        id == other.id &&
         firstName == other.firstName &&
         middleName == other.middleName &&
         lastName == other.lastName &&
@@ -141,7 +154,9 @@ class _$AccountSettings extends AccountSettings {
   int get hashCode {
     return $jf($jc(
         $jc(
-            $jc($jc($jc(0, firstName.hashCode), middleName.hashCode),
+            $jc(
+                $jc($jc($jc(0, id.hashCode), firstName.hashCode),
+                    middleName.hashCode),
                 lastName.hashCode),
             accessToken.hashCode),
         userName.hashCode));
@@ -150,6 +165,7 @@ class _$AccountSettings extends AccountSettings {
   @override
   String toString() {
     return (newBuiltValueToStringHelper('AccountSettings')
+          ..add('id', id)
           ..add('firstName', firstName)
           ..add('middleName', middleName)
           ..add('lastName', lastName)
@@ -162,6 +178,10 @@ class _$AccountSettings extends AccountSettings {
 class AccountSettingsBuilder
     implements Builder<AccountSettings, AccountSettingsBuilder> {
   _$AccountSettings _$v;
+
+  int _id;
+  int get id => _$this._id;
+  set id(int id) => _$this._id = id;
 
   String _firstName;
   String get firstName => _$this._firstName;
@@ -187,6 +207,7 @@ class AccountSettingsBuilder
 
   AccountSettingsBuilder get _$this {
     if (_$v != null) {
+      _id = _$v.id;
       _firstName = _$v.firstName;
       _middleName = _$v.middleName;
       _lastName = _$v.lastName;
@@ -214,6 +235,7 @@ class AccountSettingsBuilder
   _$AccountSettings build() {
     final _$result = _$v ??
         new _$AccountSettings._(
+            id: id,
             firstName: firstName,
             middleName: middleName,
             lastName: lastName,

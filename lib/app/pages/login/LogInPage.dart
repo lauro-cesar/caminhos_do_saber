@@ -7,8 +7,9 @@
  */
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
-  HomePage({Key key});
+
+class LogInPage extends StatelessWidget {
+  LogInPage({Key key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +23,7 @@ class HomePage extends StatelessWidget {
             ),
             Text(
               'Centro',
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headline,
             ),
           ],
         ),

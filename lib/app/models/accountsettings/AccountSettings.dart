@@ -12,17 +12,26 @@ import 'package:built_value/serializer.dart';
 import 'package:caminhos_do_saber/app/models/serializers.dart';
 part 'AccountSettings.g.dart';
 
+
 abstract class AccountSettings implements Built<AccountSettings, AccountSettingsBuilder> {
+  @nullable
+  int get id;
+  @nullable
   String get firstName;
+  @nullable
   String get middleName;
+  @nullable
   String get lastName;
+  @nullable
   String get accessToken;
+
   String get userName;
 
   String toJson(){
     return json
         .encode(serializers.serializeWith(AccountSettings.serializer, this));
   }
+
 
   static AccountSettings fromJson(String fromJson){
     return serializers.deserializeWith(AccountSettings.serializer, json.decode(fromJson));

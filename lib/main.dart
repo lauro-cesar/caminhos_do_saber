@@ -6,11 +6,13 @@
  *
  */
 
-import 'dart:io';
+library caminhos_do_saber;
 
+import 'dart:io';
 import 'package:caminhos_do_saber/app/MyApp.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:caminhos_do_saber/app/AppKeys.dart';
 
 void main() {
   FlutterError.onError = (FlutterErrorDetails details) {
@@ -20,7 +22,7 @@ void main() {
       FlutterError.dumpErrorToConsole(details);
     }
   };
-  runApp(MyApp());
+  runApp(MyApp(key: AppKeys.myApp));
 }
 
 

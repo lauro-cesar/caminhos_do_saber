@@ -6,5 +6,6 @@
  *
  */
 
-export 'package:caminhos_do_saber/app/pages/accountsettings/widgets/widgets.dart';
-export 'Buttons.dart';
+export 'EditAccountSettingsButton.dart';
+export 'SaveAccountSettingsButton.dart';
+export 'CancelEditAccountSettingsButton.dart';
