@@ -8,3 +8,5 @@
 
 export 'home/HomePage.dart';
 export 'accountsettings/AccountSettingsPage.dart';
+export 'contentcreator/ContentCreatorPage.dart';
+export 'login/LogInPage.dart';

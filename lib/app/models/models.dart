@@ -7,3 +7,4 @@
  */
 
 export 'accountsettings/AccountSettings.dart';
+export 'contentcreator/Document.dart';

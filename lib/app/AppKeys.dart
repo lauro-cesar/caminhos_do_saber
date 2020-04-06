@@ -11,8 +11,13 @@ import 'package:flutter/widgets.dart';
 class AppKeys {
   static const myApp = Key('__myApp__');
   static const homePage = Key('__homeScreen__');
+  static const contentCreatorPage = Key('__content__Creator__Screen__');
+  static const accountSettingsPage = Key('__account__Settings__Screen__');
+  static const loginPage = Key('__loginScreen__');
+
   static const addTodoFab = Key('__addTodoFab__');
   static const snackbar = Key('__snackbar__');
+
   static Key snackbarAction(String id) => Key('__snackbar_action_${id}__');
 
 

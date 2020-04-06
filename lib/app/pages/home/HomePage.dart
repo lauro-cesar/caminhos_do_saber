@@ -6,9 +6,11 @@
  *
  */
 import 'package:flutter/material.dart';
+import 'package:caminhos_do_saber/app/AppKeys.dart';
 
 class HomePage extends StatelessWidget {
-  HomePage({Key key}) : super(key: key);
+
+  HomePage({Key key:AppKeys.homePage}): super(key:key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +23,7 @@ class HomePage extends StatelessWidget {
               'You have pushed the button this many times:',
             ),
             Text(
-              'Centro',
+              'HomePage',
               style: Theme.of(context).textTheme.headline,
             ),
           ],

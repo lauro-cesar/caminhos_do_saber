@@ -6,10 +6,10 @@
  *
  */
 import 'package:flutter/material.dart';
-
+import 'package:caminhos_do_saber/app/AppKeys.dart';
 
 class LogInPage extends StatelessWidget {
-  LogInPage({Key key});
+  LogInPage({Key key:AppKeys.loginPage}): super(key:key);
 
   @override
   Widget build(BuildContext context) {

@@ -22,10 +22,15 @@ abstract class AccountSettings implements Built<AccountSettings, AccountSettings
   String get middleName;
   @nullable
   String get lastName;
+
   @nullable
   String get accessToken;
 
+  bool  get rememberMe => false;
+
+  @nullable
   String get userName;
+
 
   String toJson(){
     return json

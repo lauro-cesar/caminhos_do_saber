@@ -7,14 +7,14 @@
  */
 
 import 'package:flutter/material.dart';
+import 'package:caminhos_do_saber/app/AppKeys.dart';
+
 
 class AccountSettingsPage extends StatelessWidget {
-  AccountSettingsPage({Key key}): super(key: key);
+  AccountSettingsPage({Key key:AppKeys.accountSettingsPage}): super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    assert(Theme().data.textTheme.headline != null );
-    assert(MainAxisAlignment.center != null );
     return Scaffold(
       body: Center(
         child: Column(
