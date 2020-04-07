@@ -18,7 +18,6 @@ import 'package:caminhos_do_saber/app/AuthManager.dart';
 
 class MyApp extends StatelessWidget {
   MyApp({Key key}):super(key: key ?? AppKeys.myApp);
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
