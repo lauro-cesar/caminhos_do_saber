@@ -45,6 +45,7 @@ abstract class AccountSettings implements Built<AccountSettings, AccountSettings
   static Serializer<AccountSettings> get serializer => _$accountSettingsSerializer;
 
   AccountSettings._();
+
   factory AccountSettings([updates(AccountSettingsBuilder b)]) = _$AccountSettings;
 
 }

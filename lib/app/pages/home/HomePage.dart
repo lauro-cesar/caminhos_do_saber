@@ -7,10 +7,13 @@
  */
 import 'package:flutter/material.dart';
 import 'package:caminhos_do_saber/app/AppKeys.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:caminhos_do_saber/app/blocs.dart';
+import 'package:caminhos_do_saber/app/widgets/widgets.dart';
 
 class HomePage extends StatelessWidget {
 
-  HomePage({Key key:AppKeys.homePage}): super(key:key);
+  HomePage({Key key}): super(key:key ?? AppKeys.homePage);
 
   @override
   Widget build(BuildContext context) {
@@ -19,12 +22,10 @@ class HomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
+            UserNameLabel(),
             Text(
               'HomePage',
-              style: Theme.of(context).textTheme.headline,
+              style: Theme.of(context).textTheme.headline4,
             ),
           ],
         ),

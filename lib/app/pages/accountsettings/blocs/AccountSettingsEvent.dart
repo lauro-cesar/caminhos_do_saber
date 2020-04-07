@@ -15,7 +15,10 @@ abstract class AccountSettingsEvent extends Equatable {
   List<Object> get props => [];
 }
 
+class AccountSettingsEventShowLogInPage extends AccountSettingsEvent {}
+class AccountSettingsEventShowSignInPage extends AccountSettingsEvent {}
 
+class AccountSettingsEventStarted extends AccountSettingsEvent {}
 class AccountSettingsEventLogIn extends AccountSettingsEvent {}
 class AccountSettingsEventSignIn extends AccountSettingsEvent {}
 class AccountSettingsEventLogOut extends AccountSettingsEvent {}

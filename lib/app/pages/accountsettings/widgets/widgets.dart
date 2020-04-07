@@ -9,3 +9,4 @@
 export 'EditAccountSettingsButton.dart';
 export 'SaveAccountSettingsButton.dart';
 export 'CancelEditAccountSettingsButton.dart';
+export 'user_name_label.dart';

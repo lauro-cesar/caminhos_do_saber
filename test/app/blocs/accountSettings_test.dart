@@ -6,6 +6,7 @@
  *
  */
 
+import 'package:caminhos_do_saber/app/models/accountsettings/AccountSettings.dart';
 import 'package:flutter/foundation.dart';
 import 'package:test/test.dart';
 import 'package:bloc_test/bloc_test.dart';
@@ -21,9 +22,7 @@ void main() {
       accountSettingsBloc = AccountSettingsBloc(accountSettingsDataRepository:accountSettingsDataRepository);
     });
 
-    test('initial state of AccountSettingsBloc is AccountIsGuest', () {
-      expect(accountSettingsBloc.initialState, AccountSettingsStateIsGuest());
-    });
+
 
   });
 }
