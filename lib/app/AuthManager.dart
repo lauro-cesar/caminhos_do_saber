@@ -9,18 +9,16 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'package:caminhos_do_saber/app/pages/pages.dart';
-import 'package:caminhos_do_saber/app/widgets/widgets.dart';
 import 'package:caminhos_do_saber/app/blocs.dart';
 
-class AuthRouter extends StatefulWidget {
+class AuthManager extends StatefulWidget {
   @override
-  State<AuthRouter> createState() => _AuthRouter();
+  State<AuthManager> createState() => _AuthManager();
 }
 
 
-class _AuthRouter extends State<AuthRouter> {
+class _AuthManager extends State<AuthManager> {
 
   @override
   Widget build(BuildContext context) {

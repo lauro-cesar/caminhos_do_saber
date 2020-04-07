@@ -6,5 +6,6 @@
  *
  */
 
-export 'package:caminhos_do_saber/app/pages/contentcreator/blocs/barrel.dart';
-export 'package:caminhos_do_saber/app/pages/accountsettings/blocs/barrel.dart';
+export 'package:caminhos_do_saber/app/content_creator/bloc/barrel.dart';
+export 'package:caminhos_do_saber/app/account_settings/bloc/barrel.dart';
+export 'package:caminhos_do_saber/app/page_manager/bloc/barrel.dart';

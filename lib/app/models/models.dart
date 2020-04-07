@@ -8,3 +8,4 @@
 
 export 'accountsettings/AccountSettings.dart';
 export 'contentcreator/Document.dart';
+export 'page_manager/PageManagerModel.dart';

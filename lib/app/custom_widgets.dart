@@ -6,3 +6,4 @@
  *
  */
 
+export 'account_settings/widgets/barrel.dart';

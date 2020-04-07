@@ -13,18 +13,15 @@ import 'package:caminhos_do_saber/app/models/models.dart';
 
 
 abstract class AccountSettingsState extends Equatable {
-  final AccountSettings account;
-  const AccountSettingsState({@required this.account});
-  @override
-  List<Object> get props => [];
-}
-
-class AccountSettingsStateIsGuest extends AccountSettingsState {
-  final AccountSettings account;
-  const AccountSettingsStateIsGuest({@required this.account}) : assert(account != null);
+  const AccountSettingsState();
+  AccountSettings get account => AccountSettings();
   @override
   List<Object> get props => [account];
 }
+
+class AccountSettingsStateIsGuest extends AccountSettingsState {}
+class AccountSettingsStateIsAuthenticating extends AccountSettingsState {}
+
 
 class AccountSettingsStateIsAuthenticated extends AccountSettingsState {
   final AccountSettings account;
@@ -33,11 +30,4 @@ class AccountSettingsStateIsAuthenticated extends AccountSettingsState {
   List<Object> get props => [account];
 }
 
-class AccountSettingsStateIsAuthenticating extends AccountSettingsState {
-  final AccountSettings account;
-  const AccountSettingsStateIsAuthenticating({@required this.account}) : assert(account != null);
-  @override
-  List<Object> get props => [account];
-
-}
 

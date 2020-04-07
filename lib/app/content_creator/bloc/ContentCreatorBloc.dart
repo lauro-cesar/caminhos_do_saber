@@ -6,9 +6,9 @@
  *
  */
 import 'package:bloc/bloc.dart';
-import 'package:caminhos_do_saber/app/pages/contentcreator/blocs/barrel.dart';
 import 'package:meta/meta.dart';
-
+import 'package:caminhos_do_saber/app/blocs.dart';
+import 'package:caminhos_do_saber/app/models.dart';
 
 class ContentCreatorBloc extends Bloc<ContentCreatorEvent, ContentCreatorState> {
   final ContentCreatorDataRepository contentCreatorDataRepository;

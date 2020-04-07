@@ -6,3 +6,4 @@
  *
  */
 
+export 'package:caminhos_do_saber/app/page_manager/bloc/barrel.dart';

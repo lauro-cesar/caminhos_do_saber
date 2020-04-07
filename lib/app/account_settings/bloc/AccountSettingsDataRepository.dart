@@ -6,7 +6,7 @@
  *
  */
 
-import 'package:caminhos_do_saber/app/pages/accountsettings/blocs/barrel.dart';
+import 'package:caminhos_do_saber/app/blocs.dart';
 import 'package:caminhos_do_saber/app/models/models.dart';
 
 
@@ -17,20 +17,11 @@ class AccountSettingsDataRepository {
 
 
   Future<AccountSettings> getAccount() async {
-
-    return AccountSettings((b) => b
-      ..userName="guest"
-        ..firstName="Convidado"
-    );
-
+    return AccountSettings();
   }
 
-
   Future<AccountSettings> getGuestAccount() async {
-    return AccountSettings((b) => b
-      ..userName="guest"
-      ..firstName="Convidado"
-    );
+    return AccountSettings();
   }
 
 

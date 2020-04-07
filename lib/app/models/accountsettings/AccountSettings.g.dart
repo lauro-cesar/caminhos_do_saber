@@ -19,22 +19,12 @@ class _$AccountSettingsSerializer
   @override
   Iterable<Object> serialize(Serializers serializers, AccountSettings object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
-      'userName',
-      serializers.serialize(object.userName,
-          specifiedType: const FullType(String)),
-    ];
+    final result = <Object>[];
     if (object.id != null) {
       result
         ..add('id')
         ..add(serializers.serialize(object.id,
             specifiedType: const FullType(int)));
-    }
-    if (object.firstName != null) {
-      result
-        ..add('firstName')
-        ..add(serializers.serialize(object.firstName,
-            specifiedType: const FullType(String)));
     }
     if (object.middleName != null) {
       result
@@ -73,10 +63,6 @@ class _$AccountSettingsSerializer
           result.id = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
           break;
-        case 'firstName':
-          result.firstName = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          break;
         case 'middleName':
           result.middleName = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
@@ -87,10 +73,6 @@ class _$AccountSettingsSerializer
           break;
         case 'accessToken':
           result.accessToken = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          break;
-        case 'userName':
-          result.userName = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
       }
@@ -104,31 +86,18 @@ class _$AccountSettings extends AccountSettings {
   @override
   final int id;
   @override
-  final String firstName;
-  @override
   final String middleName;
   @override
   final String lastName;
   @override
   final String accessToken;
-  @override
-  final String userName;
 
   factory _$AccountSettings([void Function(AccountSettingsBuilder) updates]) =>
       (new AccountSettingsBuilder()..update(updates)).build();
 
   _$AccountSettings._(
-      {this.id,
-      this.firstName,
-      this.middleName,
-      this.lastName,
-      this.accessToken,
-      this.userName})
-      : super._() {
-    if (userName == null) {
-      throw new BuiltValueNullFieldError('AccountSettings', 'userName');
-    }
-  }
+      {this.id, this.middleName, this.lastName, this.accessToken})
+      : super._();
 
   @override
   AccountSettings rebuild(void Function(AccountSettingsBuilder) updates) =>
@@ -143,34 +112,25 @@ class _$AccountSettings extends AccountSettings {
     if (identical(other, this)) return true;
     return other is AccountSettings &&
         id == other.id &&
-        firstName == other.firstName &&
         middleName == other.middleName &&
         lastName == other.lastName &&
-        accessToken == other.accessToken &&
-        userName == other.userName;
+        accessToken == other.accessToken;
   }
 
   @override
   int get hashCode {
     return $jf($jc(
-        $jc(
-            $jc(
-                $jc($jc($jc(0, id.hashCode), firstName.hashCode),
-                    middleName.hashCode),
-                lastName.hashCode),
-            accessToken.hashCode),
-        userName.hashCode));
+        $jc($jc($jc(0, id.hashCode), middleName.hashCode), lastName.hashCode),
+        accessToken.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('AccountSettings')
           ..add('id', id)
-          ..add('firstName', firstName)
           ..add('middleName', middleName)
           ..add('lastName', lastName)
-          ..add('accessToken', accessToken)
-          ..add('userName', userName))
+          ..add('accessToken', accessToken))
         .toString();
   }
 }
@@ -182,10 +142,6 @@ class AccountSettingsBuilder
   int _id;
   int get id => _$this._id;
   set id(int id) => _$this._id = id;
-
-  String _firstName;
-  String get firstName => _$this._firstName;
-  set firstName(String firstName) => _$this._firstName = firstName;
 
   String _middleName;
   String get middleName => _$this._middleName;
@@ -199,20 +155,14 @@ class AccountSettingsBuilder
   String get accessToken => _$this._accessToken;
   set accessToken(String accessToken) => _$this._accessToken = accessToken;
 
-  String _userName;
-  String get userName => _$this._userName;
-  set userName(String userName) => _$this._userName = userName;
-
   AccountSettingsBuilder();
 
   AccountSettingsBuilder get _$this {
     if (_$v != null) {
       _id = _$v.id;
-      _firstName = _$v.firstName;
       _middleName = _$v.middleName;
       _lastName = _$v.lastName;
       _accessToken = _$v.accessToken;
-      _userName = _$v.userName;
       _$v = null;
     }
     return this;
@@ -236,11 +186,9 @@ class AccountSettingsBuilder
     final _$result = _$v ??
         new _$AccountSettings._(
             id: id,
-            firstName: firstName,
             middleName: middleName,
             lastName: lastName,
-            accessToken: accessToken,
-            userName: userName);
+            accessToken: accessToken);
     replace(_$result);
     return _$result;
   }

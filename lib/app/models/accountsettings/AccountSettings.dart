@@ -16,10 +16,12 @@ part 'AccountSettings.g.dart';
 abstract class AccountSettings implements Built<AccountSettings, AccountSettingsBuilder> {
   @nullable
   int get id;
-  @nullable
-  String get firstName;
+
+  String get firstName => "Convidado";
+
   @nullable
   String get middleName;
+
   @nullable
   String get lastName;
 
@@ -28,8 +30,8 @@ abstract class AccountSettings implements Built<AccountSettings, AccountSettings
 
   bool  get rememberMe => false;
 
-  @nullable
-  String get userName;
+
+  String get userName  => "guest_user";
 
 
   String toJson(){

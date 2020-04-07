@@ -9,11 +9,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:caminhos_do_saber/app/AppKeys.dart';
+import 'package:caminhos_do_saber/app/keys.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:caminhos_do_saber/app/blocs.dart';
 import 'package:caminhos_do_saber/app/MainBlocDelegate.dart';
-import 'package:caminhos_do_saber/app/AuthRouter.dart';
+import 'package:caminhos_do_saber/app/AuthManager.dart';
 
 
 class MyApp extends StatelessWidget {
@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: AuthRouter(),
+      home: AuthManager(),
     );
   }
 }

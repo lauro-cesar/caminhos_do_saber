@@ -7,20 +7,17 @@
  */
 
 import 'package:bloc/bloc.dart';
-import 'package:caminhos_do_saber/app/pages/accountsettings/blocs/barrel.dart';
 import 'package:meta/meta.dart';
-import 'package:caminhos_do_saber/app/models/models.dart';
+import 'package:caminhos_do_saber/app/blocs.dart';
+import 'package:caminhos_do_saber/app/models.dart';
 
 
 class AccountSettingsBloc extends Bloc<AccountSettingsEvent, AccountSettingsState> {
   final AccountSettingsDataRepository accountSettingsDataRepository;
   AccountSettingsBloc({@required this.accountSettingsDataRepository}): assert(accountSettingsDataRepository != null);
-  var quest  = AccountSettings((b) => b
-    ..userName="guest"
-    ..firstName="Convidado"
-  );
+
   @override
-  AccountSettingsState get initialState => AccountSettingsStateIsGuest(account:quest);
+  AccountSettingsState get initialState => AccountSettingsStateIsGuest();
 
 
   @override
@@ -33,13 +30,10 @@ class AccountSettingsBloc extends Bloc<AccountSettingsEvent, AccountSettingsStat
 
     switch (event.runtimeType) {
       case AccountSettingsEventLogIn:
-        final AccountSettings account = await  accountSettingsDataRepository.getAccount();
-        yield AccountSettingsStateIsAuthenticating(account:account);
+        yield AccountSettingsStateIsAuthenticating();
         break;
       case AccountSettingsEventLogIn:
-        final AccountSettings account = await  accountSettingsDataRepository.getAccount();
-        print(account.firstName);
-        yield AccountSettingsStateIsAuthenticating(account:account);
+        yield AccountSettingsStateIsAuthenticating();
         break;
       case AccountSettingsStateIsAuthenticated:
         final AccountSettings account = await  accountSettingsDataRepository.getAccount();
@@ -47,9 +41,7 @@ class AccountSettingsBloc extends Bloc<AccountSettingsEvent, AccountSettingsStat
         yield AccountSettingsStateIsAuthenticated(account:account);
         break;
       default:
-        final AccountSettings account = await accountSettingsDataRepository.getGuestAccount();
-        print(account.firstName);
-        yield AccountSettingsStateIsGuest(account:account);
+        yield AccountSettingsStateIsGuest();
     }
   }
 }

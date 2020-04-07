@@ -5,7 +5,7 @@
  * https://www.linkedin.com/in/lauro-cesar/
  *
  */
-import 'package:caminhos_do_saber/app/pages/contentcreator/blocs/barrel.dart';
+import 'package:caminhos_do_saber/app/blocs.dart';
 
 class ContentCreatorDataRepository {
 

@@ -14,15 +14,4 @@ import 'package:caminhos_do_saber/app/blocs.dart';
 
 void main() {
 
-  group('Account Settings blocs', () {
-    AccountSettingsBloc accountSettingsBloc;
-    AccountSettingsDataRepository  accountSettingsDataRepository;
-    setUp(() {
-      accountSettingsDataRepository =  AccountSettingsDataRepository();
-      accountSettingsBloc = AccountSettingsBloc(accountSettingsDataRepository:accountSettingsDataRepository);
-    });
-
-
-
-  });
 }
