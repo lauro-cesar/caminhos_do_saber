@@ -9,19 +9,12 @@
 library caminhos_do_saber;
 
 import 'dart:io';
-import 'package:caminhos_do_saber/app/MyApp.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:caminhos_do_saber/app/keys.dart';
-
-import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:caminhos_do_saber/app/keys.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:caminhos_do_saber/app/blocs.dart';
-import 'package:caminhos_do_saber/app/MainBlocDelegate.dart';
-import 'package:caminhos_do_saber/app/AuthManager.dart';
 
+import 'package:caminhos_do_saber/app/blocs.dart';
+import 'package:caminhos_do_saber/app/pages.dart';
 
 
 
@@ -30,16 +23,8 @@ void runAppEntry() {
   BlocSupervisor.delegate = MainBlocDelegate();
   final contentCreatorDataRepository = ContentCreatorDataRepository();
   final accountSettingsDataRepository = AccountSettingsDataRepository();
-  final pageManagerDataRepository = PageManagerDataRepository();
-
   runApp(MultiBlocProvider(
     providers: [
-      BlocProvider<PageManagerBloc>(
-       create: (context) => PageManagerBloc(pageManagerDataRepository:pageManagerDataRepository)..add(PageManagerLoadEvent()),
-      ),
-      BlocProvider<ContentCreatorBloc>(
-          create: (context) =>ContentCreatorBloc(contentCreatorDataRepository:contentCreatorDataRepository)..add(ContentCreatorStarted())
-      ),
       BlocProvider<AccountSettingsBloc>(
           create: (context) =>AccountSettingsBloc(accountSettingsDataRepository:accountSettingsDataRepository)..add(AccountSettingsEventStarted())
       ),

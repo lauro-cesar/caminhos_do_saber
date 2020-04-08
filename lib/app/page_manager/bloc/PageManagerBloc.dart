@@ -26,6 +26,12 @@ class PageManagerBloc extends Bloc<PageManagerEvent, PageManagerState> {
       ) async* {
 
     switch (event.runtimeType) {
+      case  PageManagerNextPageEvent:
+        final PageManagerModel pageManagerModel = await  pageManagerDataRepository.getNextPage(event.newPage);
+        print(pageManagerModel.activePageIndex);
+        print(event.newPage);
+        yield PageManagerNextPageLoadedState(pageManager:pageManagerModel);
+        break;
       case PageManagerShowPageEvent:
         final PageManagerModel pageManagerModel = await  pageManagerDataRepository.getPageManager();
         yield PageManagerLoadedState();

@@ -6,30 +6,29 @@
  *
  */
 import 'package:flutter/material.dart';
-import 'package:caminhos_do_saber/app/keys.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'package:caminhos_do_saber/app/blocs.dart';
-import 'package:caminhos_do_saber/app/custom_widgets.dart';
+import 'package:caminhos_do_saber/app/pages.dart';
+import 'package:caminhos_do_saber/app/keys.dart';
 
 class HomePage extends StatelessWidget {
 
-  HomePage({Key key}): super(key:key ?? AppKeys.homePage);
+  HomePage({Key key}) : super(key: key ?? AppKeys.homePage);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            UserNameLabel(),
-            Text(
-              'HomePage',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
-      ),
-    );
+    final homePageManagerDataRepository = PageManagerDataRepository();
+    return MultiBlocProvider(
+        providers: [
+          BlocProvider<PageManagerBloc>(
+            create: (context) => PageManagerBloc(
+                pageManagerDataRepository: homePageManagerDataRepository)
+              ..add(PageManagerLoadEvent()),
+          ),
+        ],
+        child: Scaffold(
+          body: HomePageManager()
+        ));
   }
 }

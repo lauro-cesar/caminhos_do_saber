@@ -6,6 +6,4 @@
  *
  */
 
-export '../home_page/HomePage.dart';
-export '../account_settings/AccountSettingsPage.dart';
-export 'login/LogInPage.dart';
+export 'AccountSettings.dart';

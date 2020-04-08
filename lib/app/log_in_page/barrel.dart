@@ -6,3 +6,4 @@
  *
  */
 
+export 'LogInPage.dart';

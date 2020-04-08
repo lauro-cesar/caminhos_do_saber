@@ -6,3 +6,5 @@
  *
  */
 
+export '../account_settings/models/AccountSettings.dart';
+export '../page_manager/models/PageManagerModel.dart';

@@ -6,7 +6,7 @@
  *
  */
 
-import 'package:caminhos_do_saber/app/models/accountsettings/AccountSettings.dart';
+import 'package:caminhos_do_saber/app/account_settings/models/AccountSettings.dart';
 import 'package:flutter/foundation.dart';
 import 'package:test/test.dart';
 import 'package:bloc_test/bloc_test.dart';

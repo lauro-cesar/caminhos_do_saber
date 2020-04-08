@@ -5,12 +5,14 @@
 library serializers;
 import 'package:built_value/serializer.dart';
 import 'package:built_value/standard_json_plugin.dart';
-import 'package:caminhos_do_saber/app/models/models.dart';
+
+import 'package:caminhos_do_saber/app/models.dart';
 
 part 'serializers.g.dart';
 
 @SerializersFor(const [
-  AccountSettings
+  AccountSettings,
+  PageManagerModel
   ])
 
 Serializers serializers = _$serializers;

@@ -6,3 +6,5 @@
  *
  */
 
+export 'HomePage.dart';
+export 'HomePageManager.dart';

@@ -6,3 +6,5 @@
  *
  */
 
+export 'AccountSettingsPage.dart';
+export 'custom_widgets/barrel.dart';

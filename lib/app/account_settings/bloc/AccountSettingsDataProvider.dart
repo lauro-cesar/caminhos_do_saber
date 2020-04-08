@@ -6,7 +6,7 @@
  *
  */
 
-import 'package:caminhos_do_saber/app/models/models.dart';
+import 'package:caminhos_do_saber/app/models.dart';
 
 
 

@@ -15,8 +15,10 @@ import 'package:caminhos_do_saber/app/models/serializers.dart';
 part 'PageManagerModel.g.dart';
 
 abstract class PageManagerModel implements Built<PageManagerModel, PageManagerModelBuilder> {
-  int get activePageIndex => 0;
-  int get lastPageIndex =>0;
+
+  int get activePageIndex;
+  @nullable
+  int get lastPageIndex;
 
   String toJson(){
     return json

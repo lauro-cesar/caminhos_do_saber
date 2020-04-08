@@ -15,7 +15,14 @@ import 'package:caminhos_do_saber/app/models.dart';
 
 abstract class PageManagerState extends Equatable {
   const PageManagerState();
-  PageManagerModel get pageManager => PageManagerModel();
+  PageManagerModel get pageManager => PageManagerModel((b) => b..activePageIndex=0);
+  @override
+  List<Object> get props => [pageManager];
+}
+
+class PageManagerNextPageLoadedState extends PageManagerState  {
+  final PageManagerModel pageManager;
+  const PageManagerNextPageLoadedState({@required this.pageManager}) : assert(pageManager != null);
   @override
   List<Object> get props => [pageManager];
 }

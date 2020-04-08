@@ -10,9 +10,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:caminhos_do_saber/app/keys.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:caminhos_do_saber/app/blocs.dart';
-import 'package:caminhos_do_saber/app/MainBlocDelegate.dart';
+
 import 'package:caminhos_do_saber/app/AuthManager.dart';
 
 

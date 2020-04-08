@@ -8,7 +8,7 @@
 
 import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
-import 'package:caminhos_do_saber/app/models/models.dart';
+import 'package:caminhos_do_saber/app/models.dart';
 
 
 
