@@ -22,7 +22,7 @@ class HomePageManager extends StatelessWidget {
     }, builder: (context, state) {
       final pageManagerBloc = BlocProvider.of<PageManagerBloc>(context);
       return Container(
-          color: Colors.white,
+          color: Colors.yellow,
           alignment: Alignment.center,
           child: AnimatedSwitcher(
               transitionBuilder: (Widget child, Animation<double> animation) {
@@ -44,17 +44,13 @@ class HomePageManager extends StatelessWidget {
                   key: ValueKey<int>(state.pageManager.activePageIndex),
                   index: state.pageManager.activePageIndex,
                   children: List<Widget>.generate(10, (int index) {
-                    return Container(
-                      color: Colors.accents[index],
-                      alignment: Alignment.center,
-                      child: Center(
-                          child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          UserNameLabel(),
-                          Text("Page : $index",
-                              style: Theme.of(context).textTheme.headline),
-                          RaisedButton(
+                    return Stack(
+                      children: <Widget>[
+                        PageContainer(),
+                        Positioned(
+                          left:100,
+                          bottom: 20,
+                          child: RaisedButton(
                             child: Text(
                                 'Editor Page ${state.pageManager.activePageIndex + 1}'),
                             onPressed: () {
@@ -64,14 +60,16 @@ class HomePageManager extends StatelessWidget {
                               } else {
                                 nextPage = index + 1;
                               }
-                              print("Next Page: $nextPage");
+
                               pageManagerBloc.add(
                                   PageManagerNextPageEvent(nextPage: nextPage));
                             },
                           )
-                        ],
-                      )),
+
+                        )
+                      ],
                     );
+
                   }))));
     });
   }

@@ -32,7 +32,7 @@ class _AuthManager extends State<AuthManager> {
           builder: (context, state) {
             switch (state.runtimeType) {
               case AccountSettingsStateIsGuest:
-                return HomePage();
+                return ContentCreatorPage();
                 break;
               case AccountSettingsStateIsAuthenticated:
                 return HomePage();

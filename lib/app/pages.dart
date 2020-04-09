@@ -6,6 +6,7 @@
  *
  */
 
+export 'content_creator/barrel.dart';
 export 'account_settings/barrel.dart';
 export 'home_page/barrel.dart';
 export 'sign_in_page/barrel.dart';

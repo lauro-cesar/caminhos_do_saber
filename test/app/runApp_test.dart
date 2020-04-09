@@ -42,7 +42,8 @@ void main() {
 
 
       expect(find.byKey(AppKeys.myApp), findsOneWidget);
-      expect(find.byKey(AppKeys.homePage), findsOneWidget);
+
+
 
 
 

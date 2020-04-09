@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of '../../page_manager/models/PageManagerModel.dart';
+part of 'PageManagerModel.dart';
 
 // **************************************************************************
 // BuiltValueGenerator

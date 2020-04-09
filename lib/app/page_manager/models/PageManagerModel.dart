@@ -10,7 +10,7 @@ import 'dart:convert';
 import 'package:built_value/built_value.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/serializer.dart';
-import 'package:caminhos_do_saber/app/models/serializers.dart';
+import 'package:caminhos_do_saber/app/serializers.dart';
 
 part 'PageManagerModel.g.dart';
 

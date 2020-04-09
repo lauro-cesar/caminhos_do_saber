@@ -11,6 +11,8 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+  printing: ^3.3.0
+  pdf: ^1.6.0
   built_value: ^7.0.9
   built_collection: ^4.3.2
   flutter_bloc: ^3.2.0
@@ -19,6 +21,7 @@ dependencies:
   meta: ^1.1.8
   equatable: ^1.1.1
   font_awesome_flutter: ^8.8.1
+  cached_network_image: ^2.0.0
 
 
 dev_dependencies:
