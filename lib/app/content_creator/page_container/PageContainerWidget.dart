@@ -8,7 +8,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:caminhos_do_saber/app/pages.dart';
-
+import 'package:cached_network_image/cached_network_image.dart';
 class PageContainerWidget extends StatelessWidget {
 
   Widget _myImage(){
@@ -17,20 +17,12 @@ class PageContainerWidget extends StatelessWidget {
       height: 100,
       color:Colors.white,
 
-      child: Image.network(
-        'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg',
-        frameBuilder: (BuildContext context, Widget child, int frame, bool wasSynchronouslyLoaded) {
-          if (wasSynchronouslyLoaded) {
-            return child;
-          }
-          return AnimatedOpacity(
-            child: child,
-            opacity: frame == null ? 0 : 1,
-            duration: const Duration(seconds: 1),
-            curve: Curves.easeOut,
-          );
-        },
-      ),
+      child: CachedNetworkImage(
+        width: 96,
+        height: 96,
+        placeholder: (context, url) => CircularProgressIndicator(),
+        imageUrl: 'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg',
+      )
     );
   }
   @override
