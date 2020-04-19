@@ -6,6 +6,8 @@
  *
  */
 
-export 'page_container/PageContainer.dart';
-export 'image_container/ImageContainer.dart';
-export 'ContentCreatorPage.dart';
+export 'page_editor/barrel.dart';
+export 'page_container/PageContainerWidget.dart';
+export 'image_container/ImageContainerWidget.dart';
+export 'ContentCreatorWidget.dart';
+export 'ContentCreatorHomeWidget.dart';

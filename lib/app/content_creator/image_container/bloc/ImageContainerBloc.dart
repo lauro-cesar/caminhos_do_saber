@@ -32,7 +32,7 @@ class ImageContainerBloc extends Bloc<ImageContainerEvent, ImageContainerState> 
         yield ImageContainerMovedState(imageContainerModel:imageContainerModel);
         break;
       case ImageContainerDragEndEvent:
-        ImageContainerModel imageContainerModel = await dataRepository.moveTo(event.details.offset.dx,event.details.offset.dy);
+        ImageContainerModel imageContainerModel = await dataRepository.moveTo(event.details.offset.dx-100,event.details.offset.dy);
         yield ImageContainerMovedState(imageContainerModel:imageContainerModel);
         break;
 

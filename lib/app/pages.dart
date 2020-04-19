@@ -7,11 +7,11 @@
  */
 
 export 'content_creator/barrel.dart';
-export 'account_settings/barrel.dart';
+export 'account_manager/barrel.dart';
 export 'home_page/barrel.dart';
-export 'sign_in_page/barrel.dart';
-export 'log_in_page/barrel.dart';
 export 'MyApp.dart';
 export 'AuthManager.dart';
 export 'MainBlocDelegate.dart';
-
+export 'widget_handler/barrel.dart';
+export 'webcam_stream/barrel.dart';
+export 'custom_extends/barrel.dart';

@@ -30,6 +30,12 @@ class _$ImageContainerModelSerializer
         ..add(serializers.serialize(object.id,
             specifiedType: const FullType(int)));
     }
+    if (object.pageId != null) {
+      result
+        ..add('pageId')
+        ..add(serializers.serialize(object.pageId,
+            specifiedType: const FullType(int)));
+    }
     if (object.index != null) {
       result
         ..add('index')
@@ -79,6 +85,10 @@ class _$ImageContainerModelSerializer
           result.id = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
           break;
+        case 'pageId':
+          result.pageId = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
+          break;
         case 'index':
           result.index = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
@@ -110,6 +120,8 @@ class _$ImageContainerModel extends ImageContainerModel {
   @override
   final int id;
   @override
+  final int pageId;
+  @override
   final int index;
   @override
   final double x;
@@ -124,7 +136,8 @@ class _$ImageContainerModel extends ImageContainerModel {
           [void Function(ImageContainerModelBuilder) updates]) =>
       (new ImageContainerModelBuilder()..update(updates)).build();
 
-  _$ImageContainerModel._({this.id, this.index, this.x, this.y, this.w, this.h})
+  _$ImageContainerModel._(
+      {this.id, this.pageId, this.index, this.x, this.y, this.w, this.h})
       : super._();
 
   @override
@@ -141,6 +154,7 @@ class _$ImageContainerModel extends ImageContainerModel {
     if (identical(other, this)) return true;
     return other is ImageContainerModel &&
         id == other.id &&
+        pageId == other.pageId &&
         index == other.index &&
         x == other.x &&
         y == other.y &&
@@ -152,7 +166,11 @@ class _$ImageContainerModel extends ImageContainerModel {
   int get hashCode {
     return $jf($jc(
         $jc(
-            $jc($jc($jc($jc(0, id.hashCode), index.hashCode), x.hashCode),
+            $jc(
+                $jc(
+                    $jc($jc($jc(0, id.hashCode), pageId.hashCode),
+                        index.hashCode),
+                    x.hashCode),
                 y.hashCode),
             w.hashCode),
         h.hashCode));
@@ -162,6 +180,7 @@ class _$ImageContainerModel extends ImageContainerModel {
   String toString() {
     return (newBuiltValueToStringHelper('ImageContainerModel')
           ..add('id', id)
+          ..add('pageId', pageId)
           ..add('index', index)
           ..add('x', x)
           ..add('y', y)
@@ -178,6 +197,10 @@ class ImageContainerModelBuilder
   int _id;
   int get id => _$this._id;
   set id(int id) => _$this._id = id;
+
+  int _pageId;
+  int get pageId => _$this._pageId;
+  set pageId(int pageId) => _$this._pageId = pageId;
 
   int _index;
   int get index => _$this._index;
@@ -204,6 +227,7 @@ class ImageContainerModelBuilder
   ImageContainerModelBuilder get _$this {
     if (_$v != null) {
       _id = _$v.id;
+      _pageId = _$v.pageId;
       _index = _$v.index;
       _x = _$v.x;
       _y = _$v.y;
@@ -231,7 +255,7 @@ class ImageContainerModelBuilder
   _$ImageContainerModel build() {
     final _$result = _$v ??
         new _$ImageContainerModel._(
-            id: id, index: index, x: x, y: y, w: w, h: h);
+            id: id, pageId: pageId, index: index, x: x, y: y, w: w, h: h);
     replace(_$result);
     return _$result;
   }

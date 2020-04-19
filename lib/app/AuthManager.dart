@@ -12,39 +12,25 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:caminhos_do_saber/app/pages.dart';
 import 'package:caminhos_do_saber/app/blocs.dart';
 
-class AuthManager extends StatefulWidget {
-  @override
-  State<AuthManager> createState() => _AuthManager();
-}
 
 
-class _AuthManager extends State<AuthManager> {
+class AuthManager extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<AccountSettingsBloc, AccountSettingsState>(
-        listener: (context, state) {
-        },
-        child: BlocBuilder<AccountSettingsBloc, AccountSettingsState>(
-          condition: (previousState, state) {
-            return (previousState != state);
-          },
-          builder: (context, state) {
-            switch (state.runtimeType) {
-              case AccountSettingsStateIsGuest:
-                return ContentCreatorPage();
-                break;
-              case AccountSettingsStateIsAuthenticated:
-                return HomePage();
-                break;
-              case AccountSettingsStateIsAuthenticating:
-                return HomePage();
-                break;
-              default:
-                return HomePage();
-            }
-          },
-        )
+    return BlocBuilder<AccountManagerBloc, AccountManagerState>(
+      condition: (previousState, state) {
+        return (previousState != state);
+      },
+      builder: (context, state) {
+        switch (state.runtimeType) {
+          case AccountManagerIsLoggedInState:
+            return HomePage();
+            break;
+          default:
+            return ContentCreatorWidget();
+        }
+      },
     );
   }
 }

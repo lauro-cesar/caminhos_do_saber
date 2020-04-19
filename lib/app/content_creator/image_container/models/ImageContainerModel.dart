@@ -18,6 +18,9 @@ abstract class ImageContainerModel implements Built<ImageContainerModel, ImageCo
   int get id;
 
   @nullable
+  int get pageId;
+
+  @nullable
   int get index;
 
   @nullable
@@ -31,8 +34,6 @@ abstract class ImageContainerModel implements Built<ImageContainerModel, ImageCo
 
   @nullable
   double get h;
-
-
 
   String toJson(){
     return json

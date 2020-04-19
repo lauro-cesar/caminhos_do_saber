@@ -17,7 +17,7 @@ void main() {
 group('Testing App Models', () {
 
     test('Test Account Settings Model Serialization', () {
-      final accountSettings = AccountSettings();
+      final accountSettings = AccountModel();
       expect(accountSettings.rememberMe, isFalse);
       expect(accountSettings.userName, isNotEmpty);
     });

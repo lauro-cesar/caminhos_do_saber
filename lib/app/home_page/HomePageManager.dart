@@ -16,11 +16,11 @@ import 'package:caminhos_do_saber/app/pages.dart';
 class HomePageManager extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<PageManagerBloc, PageManagerState>(
+    return BlocBuilder<StackManagerBloc, StackManagerState>(
         condition: (previousState, state) {
       return (previousState != state);
     }, builder: (context, state) {
-      final pageManagerBloc = BlocProvider.of<PageManagerBloc>(context);
+      final pageManagerBloc = BlocProvider.of<StackManagerBloc>(context);
       return Container(
           color: Colors.yellow,
           alignment: Alignment.center,
@@ -41,32 +41,13 @@ class HomePageManager extends StatelessWidget {
               },
               duration: const Duration(milliseconds:700),
               child: IndexedStack(
-                  key: ValueKey<int>(state.pageManager.activePageIndex),
-                  index: state.pageManager.activePageIndex,
-                  children: List<Widget>.generate(10, (int index) {
+                  key: ValueKey<int>(state.stackManagerModel.activePageIndex),
+                  index: state.stackManagerModel.activePageIndex,
+                  children: List<Widget>.generate(4, (int index) {
                     return Stack(
+                      key: ValueKey<String>("stack_$index"),
                       children: <Widget>[
-                        PageContainer(),
-                        Positioned(
-                          left:100,
-                          bottom: 20,
-                          child: RaisedButton(
-                            child: Text(
-                                'Editor Page ${state.pageManager.activePageIndex + 1}'),
-                            onPressed: () {
-                              int nextPage;
-                              if (index == 9) {
-                                nextPage = 0;
-                              } else {
-                                nextPage = index + 1;
-                              }
-
-                              pageManagerBloc.add(
-                                  PageManagerNextPageEvent(nextPage: nextPage));
-                            },
-                          )
-
-                        )
+                        PageContainerWidget(),
                       ],
                     );
 

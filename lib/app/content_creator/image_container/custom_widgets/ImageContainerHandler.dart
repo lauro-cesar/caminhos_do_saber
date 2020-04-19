@@ -15,6 +15,7 @@ class ImageContainerHandler extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return BlocBuilder<ImageContainerBloc, ImageContainerState>(
         condition: (previousState, state) {
           return (previousState != state);

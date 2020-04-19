@@ -12,14 +12,13 @@ import 'package:caminhos_do_saber/app/models.dart';
 class ImageContainerDataRepository {
   final ImageContainerLocalStorageDataProvider localStorageDataProvider = ImageContainerLocalStorageDataProvider();
   final ImageContainerRestDataProvider restDataProvider  = ImageContainerRestDataProvider();
+
   ImageContainerModel get imageContainerModel => ImageContainerModel((b) => b..x=50
   ..y=50);
 
   Future<ImageContainerModel> moveTo(double  x, double y) async {
     var m = await imageContainerModel.rebuild((b) => b..x=x
-    ..y=y);
+      ..y=y);
     return m;
   }
-
-
 }

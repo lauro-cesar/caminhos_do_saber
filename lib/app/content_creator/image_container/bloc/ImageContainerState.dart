@@ -17,7 +17,8 @@ abstract class ImageContainerState extends Equatable {
   ..x=100
   ..y=100
   ..h=100
-  ..index=0);
+  ..index=0
+  ..pageId=0);
   @override
   List<Object> get props => [imageContainerModel];
 }

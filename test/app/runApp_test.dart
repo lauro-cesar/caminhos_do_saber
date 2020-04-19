@@ -18,18 +18,16 @@ import 'package:caminhos_do_saber/app/keys.dart';
 import 'package:caminhos_do_saber/app/blocs.dart';
 
 
-
+//Just to check for a general run...
 void main() {
 
     testWidgets('Full App', (WidgetTester tester) async {
       runAppEntry() {
         BlocSupervisor.delegate = MainBlocDelegate();
-        final accountSettingsDataRepository = AccountSettingsDataRepository();
-
         return(MultiBlocProvider(
           providers: [
-            BlocProvider<AccountSettingsBloc>(
-                create: (context) =>AccountSettingsBloc(accountSettingsDataRepository:accountSettingsDataRepository)..add(AccountSettingsEventStarted())
+            BlocProvider<AccountManagerBloc>(
+                create: (context) =>AccountManagerBloc()..add(AccountManagerStartEvent())
             ),
           ],
           child: MyApp(),
@@ -38,8 +36,6 @@ void main() {
 
       await tester.pumpWidget(runAppEntry());
       var keys = AppKeys();
-
-
 
       expect(find.byKey(AppKeys.myApp), findsOneWidget);
 

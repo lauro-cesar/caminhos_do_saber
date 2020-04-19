@@ -1,4 +1,4 @@
 before_script:
-  - git clone https://github.com/flutter/flutter.git -b beta
-script:
-  - ./flutter/bin/flutter test --coverage
+      - git clone https://github.com/flutter/flutter.git -b beta
+      script:
+        - ./flutter/bin/flutter test --coverage

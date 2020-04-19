@@ -18,13 +18,10 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final homePageManagerDataRepository = PageManagerDataRepository();
     return MultiBlocProvider(
         providers: [
-          BlocProvider<PageManagerBloc>(
-            create: (context) => PageManagerBloc(
-                pageManagerDataRepository: homePageManagerDataRepository)
-              ..add(PageManagerLoadEvent()),
+          BlocProvider<StackManagerBloc>(
+            create: (context) => StackManagerBloc()..add(StackManagerSetMaxIndexEvent(newMaxIndex: 2)),
           ),
         ],
         child: Scaffold(
